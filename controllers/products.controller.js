@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
-import { readFile, writeFile } from 'fs';
+import { loadFromDb, saveToDb } from '../lib/databaseHelpers.js';
 
 function getProductForm(request, response) {
   response.send(`
