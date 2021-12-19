@@ -1,5 +1,7 @@
 import * as fs from 'fs';
 
+console.log(process.argv);
+
 const name = process.argv[2];
 const fileName = process.argv[3] || 'users.txt';
 
