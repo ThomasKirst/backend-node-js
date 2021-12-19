@@ -5,7 +5,7 @@ import customersRoutes from './routes/customers.routes.js';
 
 const app = express();
 
-app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 
 app.get('/', (request, response) => {
   response.json({ status: 'Server is up and running.' });
