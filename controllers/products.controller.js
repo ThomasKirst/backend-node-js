@@ -1,14 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
-import { readFile, writeFile } from 'fs';
-
-function getProductForm(request, response) {
-  response.send(`
-      <form action="/products" method="POST">
-        <input type="text" name="productname" />
-        <button>Add product</button>
-      </form>
-  `);
-}
+import { loadFromDb, saveToDb } from '../lib/databaseHelpers.js';
 
 function postProduct(request, response) {
   const newProduct = { ...request.body, id: uuidv4() };
@@ -22,4 +13,18 @@ function postProduct(request, response) {
   response.json(newProduct);
 }
 
-export { getProductForm, postProduct };
+function listProducts(request, response) {
+  const database = loadFromDb();
+  response.json({ products: database.products });
+}
+
+function findProduct(request, response) {
+  const { productId } = request.params;
+  const database = loadFromDb();
+  const productToReturn = database.products.find(
+    (product) => product.id === productId
+  );
+  response.json(productToReturn);
+}
+
+export { postProduct, listProducts, findProduct };
