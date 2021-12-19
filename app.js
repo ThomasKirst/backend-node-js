@@ -1,11 +1,14 @@
 const fs = require('fs');
 
-const name = 'Thomas';
+console.log(process.argv);
 
-fs.writeFile('user.txt', 'Name: ' + name, (error) => {
+const name = process.argv[2];
+const fileName = process.argv[3] || 'users.txt';
+
+fs.writeFile(fileName, 'Name: ' + name + '\n', (error) => {
   if (error) {
     console.error(error.message);
     return false;
   }
-  console.log(`File was written`);
+  console.log(`File ${fileName} was written`);
 });
