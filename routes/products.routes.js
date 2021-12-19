@@ -7,7 +7,7 @@ import {
 
 const router = express.Router();
 
-router.get('/', getProductForm);
+router.get('/products', getProductForm);
 router.post('/products', postProduct);
 
 export default router;

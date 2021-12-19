@@ -7,6 +7,10 @@ const app = express();
 
 app.use(express.urlencoded({ extended: false }));
 
+app.get('/', (request, response) => {
+  response.json({ status: 'Server is up and running.' });
+});
+
 app.use(productsRoutes);
 app.use(customersRoutes);
 
