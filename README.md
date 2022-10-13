@@ -22,6 +22,7 @@ In between we will refactor the code a bit to make it better structured and comp
 - `6-express-file-database-refactoring`: We extract the functions which operate with the file system into a separate file (`databaseHelpers.js`)
 - `7-express-file-database-api-routes`: Instead of sending data through an HTML form we now use designated API routes to GET, POST product data
 - `8-express-file-database-async-await`: We optimize the code in order to make it fully asynchronous, non-blocking with using `async` and `await`
+- TODO: Deploment Branch
 
 ## Available Scripts
 
