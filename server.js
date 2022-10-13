@@ -14,4 +14,6 @@ app.get('/', (request, response) => {
 app.use(productsRoutes);
 app.use(customersRoutes);
 
-app.listen(4000, () => console.log('Server is started.'));
+const port = process.env.PORT || 4000;
+
+app.listen(port, () => console.log('Server is started.'));
